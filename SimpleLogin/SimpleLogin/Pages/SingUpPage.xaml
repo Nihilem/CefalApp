@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLogin.Pages.SingUpPage">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            VerticalOptions="Center"
+            Padding="10"
+            Spacing="30">
+            <Frame
+                BackgroundColor="DarkGoldenrod"
+                HasShadow="False">
+                
+                <StackLayout
+                    Orientation="Vertical"
+                    Spacing="10"
+                    Padding="5,5,5,5">
+
+                    <Entry 
+                        x:Name="UserName"
+                        Text="{Binding Name}"
+                        Placeholder="Name"
+                        HeightRequest="50"  />
+
+                    <Entry 
+                        x:Name="UserSurname"
+                        Text="{Binding LastName}"
+                        Placeholder="Surname"
+                        HeightRequest="50"/>
+
+                    <Entry 
+                        x:Name="UserEmail"
+                        Text="{Binding Email}"
+                        Placeholder="Email"
+                        HeightRequest="50"
+                        Keyboard="Email"/>
+
+                    <Entry 
+                        x:Name="UserPassword"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        Placeholder="Password"
+                        HeightRequest="50"
+                        />
+
+                    <Entry 
+                        x:Name="UserPasswordComfirm"
+                        Text="{Binding ComfirmPassword, Mode=TwoWay}"
+                        Placeholder="Commfirm Password"
+                       
+                        HeightRequest="50"/>
+
+                    <Picker
+                       x:Name="PickerGander "
+                       Title="Select a gender"
+                       ItemsSource="{Binding TypeOfGender}"
+                        SelectedItem="{Binding Gender}"/>
+
+                </StackLayout>
+            </Frame>
+        
+            <Button
+                Command="{Binding SubmintSingUpCommand}"
+                CommandParameter="{Binding}"
+                Text="Singup"
+                 FontAttributes="Bold"
+                BackgroundColor="YellowGreen"
+                HorizontalOptions="FillAndExpand"
+                FontSize="20"
+                TextColor="White"
+                x:Name="SingUpbtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

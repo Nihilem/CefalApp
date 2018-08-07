@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "973719965539",
+    "firebase_url": "https://loginautentication-7e368.firebaseio.com",
+    "project_id": "loginautentication-7e368",
+    "storage_bucket": "loginautentication-7e368.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973719965539:android:a747df0560e94685",
+        "android_client_info": {
+          "package_name": "com.xamarin.simpleLogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973719965539-c9u4218tcg11bjh53evnb20ljo1ajevk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7bHY68zUNLPV4xs7XmjIS7frH_82LcmI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
