@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>973719965539-gkvnp09r3s3gpkhj2dm8oide7o68s95v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.973719965539-gkvnp09r3s3gpkhj2dm8oide7o68s95v</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA7kQtPyd4kogmud76mdX8KTZ4kQCOQ4po</string>
+	<key>GCM_SENDER_ID</key>
+	<string>973719965539</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.xamarin.simpleLogin</string>
+	<key>PROJECT_ID</key>
+	<string>loginautentication-7e368</string>
+	<key>STORAGE_BUCKET</key>
+	<string>loginautentication-7e368.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:973719965539:ios:a747df0560e94685</string>
+	<key>DATABASE_URL</key>
+	<string>https://loginautentication-7e368.firebaseio.com</string>
+</dict>
+</plist>

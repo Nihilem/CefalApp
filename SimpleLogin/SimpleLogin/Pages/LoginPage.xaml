@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLogin.Pages.LoginPage"
+             xmlns:local="clr-namespace:SimpleLogin;assembly=SimpleLogin"
+             xmlns:local1="clr-namespace:SimpleLogin.ViewModel">
+    <ContentPage.Content>
+
+        <StackLayout
+            Orientation="Vertical"
+            VerticalOptions="Center"
+            Padding="10"
+            Spacing="30">
+
+
+            <BoxView HeightRequest="10" />
+
+            <Frame
+                BackgroundColor="DarkGoldenrod"
+                HasShadow="False">
+
+                <StackLayout
+                    Orientation="Vertical"
+                    Spacing="10">
+
+                    <Entry 
+                        x:Name="EntryEmail"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Placeholder="Email"
+                        HeightRequest="50"
+                        TextColor="Black" 
+                        Keyboard="Email"/>
+                    <Entry
+                         x:Name="EntryPassword"
+                         Text="{Binding Password, Mode=TwoWay }"
+                         IsPassword="True"
+                         Placeholder="Password"
+                         HeightRequest="50"
+                         TextColor="Black" />
+                </StackLayout>
+
+
+            </Frame>
+
+
+            <Button
+                Command="{Binding SubmitCommand }"
+                CommandParameter="{Binding}"
+                Text="Login"
+                FontAttributes="Bold"
+                BackgroundColor="YellowGreen"
+                HorizontalOptions="FillAndExpand"
+                FontSize="20"
+                TextColor="White" />
+
+            <StackLayout 
+                Orientation="Horizontal">
+
+                <Label Text="You don't have an account?"/>
+                <Label
+                    Text="Register"
+                    TextColor="Green" 
+                    x:Name="SingUp">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerToSignUp"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
