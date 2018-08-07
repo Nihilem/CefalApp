@@ -10,7 +10,7 @@ namespace SimpleLogin.Model
        [JsonProperty(PropertyName = "name")]
         private string Name { get; set; }
 
-        [JsonProperty(PropertyName = "lastname")]
+        [JsonProperty(PropertyName = "lastName")]
         private string LastName { get; set; }
 
         [JsonProperty(PropertyName = "gender")]
