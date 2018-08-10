@@ -1,9 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimpleLogin.Pages.InitializePage">
   <!--Pages can be added as references or inline-->
-    <ContentPage Title="habits" />
-    <ContentPage Title="features" />
-
-</TabbedPage>
+    <StackLayout 
+        Orientation="Horizontal"
+        HorizontalOptions="Center">
+        <Label
+              Text="Fragment1"
+              TextColor="Green" 
+              x:Name="RecapFragmentPage1">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizerToFragmentPage1"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+              Text="Fragment2"
+              TextColor="Green" 
+              x:Name="RecapFragmentPage2">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizerToFragmentPage2"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+              Text="Fragment3"
+              TextColor="Green" 
+              x:Name="RecapFragmentPage3">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizerToFragmentPage3"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+              Text="Fragment4"
+              TextColor="Green" 
+              x:Name="RecapFragmentPage4">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizerToFragmentPage4"/>
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+</ContentPage>

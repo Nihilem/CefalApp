@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimpleLogin.Pages.LoginPage"
              xmlns:local="clr-namespace:SimpleLogin;assembly=SimpleLogin"
-             xmlns:local1="clr-namespace:SimpleLogin.ViewModel">
+             xmlns:local1="clr-namespace:SimpleLogin.ViewModel"
+             xmlns:local2="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions">
     <ContentPage.Content>
 
         <StackLayout
@@ -55,7 +56,6 @@
 
             <StackLayout 
                 Orientation="Horizontal">
-
                 <Label Text="You don't have an account?"/>
                 <Label
                     Text="Register"
@@ -64,6 +64,16 @@
 
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizerToSignUp"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="Debug Buttons"/>
+                <Label
+                    Text="Pg1"
+                    TextColor="Green" 
+                    x:Name="RecapFragmentPage">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerToFragmentPage"/>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>

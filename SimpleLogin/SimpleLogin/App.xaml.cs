@@ -8,8 +8,8 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace SimpleLogin
 {
-	public partial class App : Application
-	{
+    public partial class App : Application
+    {
         public NavigationPage NavigationPage { get; private set; }
         public static ItemManager _ItemManager;
        

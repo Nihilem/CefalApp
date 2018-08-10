@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLogin.Pages.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="My profile"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+            
+                <Label 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Days without migrane">
+                </Label>
+                <Entry 
+                        Keyboard="Numeric"
+                        Grid.Row="0"
+                        Grid.Column="1">
+                </Entry>
+                <Label 
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Text="Hours of sleep">
+                </Label>
+                <Entry 
+                        Keyboard="Numeric"
+                        Grid.Row="1"
+                        Grid.Column="1">
+                </Entry>
+                <Label 
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Text="Phone usage time">
+                </Label>
+                <Entry 
+                        Keyboard="Numeric"
+                        Grid.Row="2"
+                        Grid.Column="1">
+                </Entry>
+            </Grid>
+            <Button
+                    Command="{Binding SubmintSingUpCommand}"
+                    CommandParameter="{Binding}"
+                    Text="My statistic TEST UPDATE"
+                    FontAttributes="Bold"
+                    BackgroundColor="YellowGreen"
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="20"
+                    TextColor="White"
+                    x:Name="Statsbtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

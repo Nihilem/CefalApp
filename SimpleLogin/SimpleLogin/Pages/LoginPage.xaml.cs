@@ -27,9 +27,14 @@ namespace SimpleLogin.Pages
         }
         #endregion
 
-        private async void TapGestureRecognizerToSignUp()
+    private async void TapGestureRecognizerToSignUp()
         {
             await Navigation.PushAsync(new SingUpPage());
+        }
+
+        private async void TapGestureRecognizerToFragmentPage()
+        {
+            await Navigation.PushAsync(new InitializePage());
         }
 
     }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLogin.Pages.Page3">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="From - To"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                <DatePicker
+                        Grid.Row="0"
+                        Grid.Column="0" 
+                        MinimumDate="01/01/2018"
+                        MaximumDate="12/31/2018"
+                        Date="06/21/2018" />
+                <DatePicker
+                        Grid.Row="0"
+                        Grid.Column="1" 
+                        MinimumDate="01/01/2018"
+                        MaximumDate="12/31/2018"
+                        Date="06/21/2018" />
+            </Grid>
+            <Button
+                    Command="{Binding SubmintSingUpCommand}"
+                    CommandParameter="{Binding}"
+                    Text="My statistic TEST UPDATE"
+                    FontAttributes="Bold"
+                    BackgroundColor="YellowGreen"
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="20"
+                    TextColor="White"
+                    x:Name="Statsbtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
