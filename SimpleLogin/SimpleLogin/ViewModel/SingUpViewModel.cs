@@ -85,6 +85,7 @@ namespace SimpleLogin.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(_password));
             }
         }
+
         private string _passwordComfirm;
 
         public string ComfirmPassword
@@ -99,6 +100,7 @@ namespace SimpleLogin.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(_passwordComfirm));
             }
         }
+
         private string _gender;
         
         public string Gender
@@ -116,7 +118,23 @@ namespace SimpleLogin.ViewModel
             }
         }
 
-        private string _birthday { get; set; }
+        private DateTime _birthday;
+
+        public DateTime Birthday
+        {
+            get
+            {
+                return _birthday;
+            }
+            set
+            {
+
+                _birthday = value;
+                
+                Console.WriteLine("BirthDay "+_birthday.ToString("d"));
+                PropertyChanged(this, new PropertyChangedEventArgs(_birthday.ToString("d")));
+            }
+        }
 
         private List<String> _TypeOfGender;
 
@@ -129,7 +147,12 @@ namespace SimpleLogin.ViewModel
             
         }
 
-        public ICommand SubmintSingUpCommand { get; set; }
+        private readonly String identificationRole = "adminSecretKey";
+
+
+
+
+    public ICommand SubmintSingUpCommand { get; set; }
 
         public  readonly ICommand PasswordControll;
        
@@ -141,13 +164,14 @@ namespace SimpleLogin.ViewModel
         {
             _Navigation = _navigation;
             SubmintSingUpCommand = new Command(OnSingUp);
-            PasswordControll = new Command(OnPasswordControll);
+            PasswordControll = new Command(OnPasswordControll);  
             Init();
         }
 
         public void Init()
         {
             _TypeOfGender = new List<string>(new string[] { "female", "male" });
+            _message = "Error please Retry";
         }
 
         public async void OnSingUp(Object obj)
@@ -169,10 +193,15 @@ namespace SimpleLogin.ViewModel
                  */
                 if (AuthenticationController.EmailControll(_email))
                 {
-                    Account account = new Account(_email, _name, _lastaname, _password, _gender, new DateTime(2008, 6, 1));
-                    MessageResponse messageResponse = await App._ItemManager.ConvalidateUserAsync(account, typeOfRequest);
-                    _message = messageResponse.message;
-                    if (messageResponse.message.Equals(Message._successfullLogin))
+                   
+                    Account account = new Account(_email, _name, _lastaname, _password, _gender, _birthday
+                        ,identificationRole);
+                    ApiResponse messageResponse = await App._ItemManager.ConvalidateUserAsync(account, typeOfRequest);
+
+                    if(!string.IsNullOrEmpty(messageResponse._Message))
+                       _message = messageResponse._Message;
+
+                    if (messageResponse._Success)
                     {
                        
                         Settings.LastUsedEamil = _email;
@@ -217,6 +246,7 @@ namespace SimpleLogin.ViewModel
             Email = "";  
             DisplayInvalidLoginPrompt();
         }
+
 
     }
 }

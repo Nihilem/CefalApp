@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              x:Class="SimpleLogin.Pages.SingUpPage">
     <ContentPage.Content>
         <StackLayout
@@ -11,7 +12,7 @@
             <Frame
                 BackgroundColor="DarkGoldenrod"
                 HasShadow="False">
-                
+
                 <StackLayout
                     Orientation="Vertical"
                     Spacing="10"
@@ -49,16 +50,35 @@
                         Placeholder="Commfirm Password"
                        
                         HeightRequest="50"/>
+                    <StackLayout
+                        Orientation="Horizontal">
 
+                        <Label
+                            Text="Birthday"
+                            HeightRequest="50"
+                            VerticalTextAlignment="Center"/>
+
+                        <DatePicker     
+                        
+                        Date ="{Binding Birthday}"  
+                        HorizontalOptions="End"
+                        x:Name="UserBirthday"
+                        MaximumDate="{x:Static system:DateTime.Today}"
+                        MinimumDate="01/01/1900"
+                        
+                       />
+                        
+
+                    </StackLayout>
                     <Picker
                        x:Name="PickerGander "
                        Title="Select a gender"
                        ItemsSource="{Binding TypeOfGender}"
-                        SelectedItem="{Binding Gender}"/>
+                       SelectedItem="{Binding Gender}"/>
 
                 </StackLayout>
             </Frame>
-        
+
             <Button
                 Command="{Binding SubmintSingUpCommand}"
                 CommandParameter="{Binding}"

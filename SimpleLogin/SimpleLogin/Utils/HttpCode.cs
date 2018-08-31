@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SimpleLogin.Utils
 {
-    public enum HttpStatusCode
+    public enum HttpCode
     {
         Continue = 100,
         Switching_Protocols = 101,
@@ -15,6 +15,7 @@ namespace SimpleLogin.Utils
         Bad_Request = 400,
         Not_Found = 404,
         Not_Acceptable = 406,
-        HTTP_Version_Not_Supported = 505
+        HTTP_Version_Not_Supported = 505,
+        Connection_Time_Out = 522
     }
 }

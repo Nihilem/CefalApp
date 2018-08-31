@@ -19,9 +19,15 @@ namespace SimpleLogin.Model
         [JsonProperty(PropertyName = "birthday")]
         private DateTime DateOfBirthday { get; set; }
 
+        [JsonProperty(PropertyName = "identificationRole")]
+        private string IdentificationRole { get; set; }
+
+
+        [JsonProperty(PropertyName = "accessToken")]
+        private string AccessToken { get; set; }
 
     
-        public Account(string email, string name, string lastname, string password, string gender, DateTime dateOfBirthday)
+        public Account(string email, string name, string lastname, string password, string gender, DateTime dateOfBirthday,String identificationRole)
             :base(email,password)
         {
             Name = name;
@@ -29,9 +35,12 @@ namespace SimpleLogin.Model
             Password = password;
             Gender = gender;
             DateOfBirthday = dateOfBirthday;
+            IdentificationRole = identificationRole;
             Console.WriteLine("create Obj Account");
             Print();
         }
+
+     
 
         public override void Print()
         {
@@ -42,6 +51,8 @@ namespace SimpleLogin.Model
 
             Console.WriteLine("Gender " + Gender);
             Console.WriteLine("Date " + DateOfBirthday);
+
+            Console.WriteLine("Identification Code for Role " + IdentificationRole);
         }
     }
 }

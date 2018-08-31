@@ -86,9 +86,9 @@ namespace SimpleLogin.ViewModel
                 var credentialItem = new User(_email,_password);
                 Console.WriteLine("ciao");
                 Console.WriteLine(credentialItem);
-                MessageResponse messageResponse = await App._ItemManager.ConvalidateUserAsync(credentialItem, typeOfRequest);
-                _message = messageResponse.message;
-              if (messageResponse.message.Equals(Message._successfullLogin)){
+                ApiResponse messageResponse = await App._ItemManager.ConvalidateUserAsync(credentialItem, typeOfRequest);
+                _message = messageResponse._Message;
+              if (messageResponse._Success){
 
                     /* var newPage = new InitializePage();
                       {

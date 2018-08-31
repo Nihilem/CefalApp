@@ -68,7 +68,7 @@
                 </Label>
 
                 <Label Text="Debug Buttons"/>
-                <Label
+              <!--<Label
                     Text="Pg1"
                     TextColor="Green" 
                     x:Name="RecapFragmentPage">
@@ -76,6 +76,7 @@
                         <TapGestureRecognizer Tapped="TapGestureRecognizerToFragmentPage"/>
                     </Label.GestureRecognizers>
                 </Label>
+                -->
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

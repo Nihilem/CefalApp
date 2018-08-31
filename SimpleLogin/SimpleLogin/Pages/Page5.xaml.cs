@@ -9,32 +9,32 @@ using Xamarin.Forms.Xaml;
 
 namespace SimpleLogin.Pages
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Page5 : ContentPage
-	{
-        
-            Dictionary<string, Color> medicine = new Dictionary<string, Color>
-            {
-                { "Oki", Color.Aqua },
-                { "Efedrina", Color.Black },
-                { "Ibuprofene", Color.Blue },
-                { "Metedrina", Color.Yellow },
-                { "Aulin", Color.Gray },
-                { "Isopimpenellina", Color.Green },
-                { "Tachipirina", Color.Lime }, 
-                { "Pevaril", Color.Navy }, 
-                { "Agumentin", Color.Purple },
-                { "Ketoprofene", Color.Silver },
-                { "Teal", Color.Teal },
-                { "Metadone", Color.White }
-            };
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Page5 : ContentPage
+    {
 
-		public Page5 ()
-		{
+        private Dictionary<string, Color> nameToColor = new Dictionary<string, Color>
+        {
+            { "Aqua", Color.Aqua }, { "Black", Color.Black },
+            { "Gray", Color.Gray }, { "Green", Color.Green },
+            { "Lime", Color.Lime }, { "Maroon", Color.Maroon },
+            { "Navy", Color.Navy }, { "Olive", Color.Olive },
+            { "Purple", Color.Purple }, { "Red", Color.Red },
+            { "Silver", Color.Silver }, { "Teal", Color.Teal },
+            { "White", Color.White }, { "Yellow", Color.Yellow }
+        };
+        public Page5()
+        {
             InitializeComponent();
+       
+            foreach (string colorName in nameToColor.Keys)
+            {
+                PickerMedicine.Items.Add(colorName);
+            }
+
             Label rotationLabel = new Label
             {
-                Text = "ROTATING TEXT",
+                Text = "ROTATING  TEXT",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.CenterAndExpand
@@ -64,16 +64,6 @@ namespace SimpleLogin.Pages
                 HorizontalOptions = LayoutOptions.Center
             };
 
-            Picker picker = new Picker
-            {
-                Title = "Medicine",
-                VerticalOptions = LayoutOptions.CenterAndExpand
-            };
-
-            foreach (string medicineName in medicine.Keys)
-            {
-                picker.Items.Add(medicineName);
-            }
 
             var grid = new Grid();
 
@@ -111,7 +101,7 @@ namespace SimpleLogin.Pages
             grid.Children.Add(btn6, 3, 1);
             grid.Children.Add(btn7, 3, 2);
 
-            grid.Children.Add(picker, 4, 0);
+            //      grid.Children.Add(picker, 4, 0);
         }
 
         void OnSliderValueChanged(object sender, ValueChangedEventArgs args)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -15,7 +16,7 @@ namespace SimpleLogin.Connection
     class RestService : IRestService
     {
         private static readonly HttpClient _Client = new HttpClient();
-
+        private ApiResponse messageResponse { get; set; }
         public RestService()
         {
 
@@ -25,9 +26,9 @@ namespace SimpleLogin.Connection
          * Default uri is setted to login request
          */
 
-        public async Task<MessageResponse> ConvalidateUserAsync(User item, string typeOfRequest)
+        public async Task<ApiResponse> ConvalidateUserAsync(User item, string typeOfRequest)
         {
-            MessageResponse messageResponse = new MessageResponse("");
+            
             item.Print();
             if (NetworkCheck.IsInternet())
             {
@@ -44,28 +45,40 @@ namespace SimpleLogin.Connection
 
                 var json = JsonConvert.SerializeObject(item);
 
+                Console.WriteLine("Json " + json);
 
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, uri)
                 {
                     Content = new StringContent(json, Encoding.UTF8, "application/json")
                 };
                 var responseFromServer = await _Client.SendAsync(request);
+                Console.WriteLine("from server " + responseFromServer);
+                HttpResponseMessage httpResponse =  (HttpResponseMessage)responseFromServer;
+
                 string res = "";
                 using (HttpContent content = responseFromServer.Content)
                 {
                     // ... Read the string.
                     Task<string> result = content.ReadAsStringAsync();
                     res = result.Result;
-                    Console.WriteLine("Response "+res);
-                    messageResponse = JsonConvert.DeserializeObject<MessageResponse>(res);
-                    Console.WriteLine(messageResponse.message);
+                    Console.WriteLine(res);
+                    var settings = new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore,
+                        MissingMemberHandling = MissingMemberHandling.Ignore
+                    };
+                    if (!string.IsNullOrEmpty(res)) { 
+                        messageResponse = JsonConvert.DeserializeObject<ApiResponse>(res, settings);
+                        messageResponse._HttpStatus = httpResponse.StatusCode;
+                        Console.WriteLine(messageResponse);
+                    }
                 }
 
             }
             else
             {
                 Console.WriteLine("non connesso");
-                messageResponse = new MessageResponse(Message._connectionRefused);
+                messageResponse = new ApiResponse(false,Message._connectionRefused,HttpStatusCode.ServiceUnavailable);
 
             }
 

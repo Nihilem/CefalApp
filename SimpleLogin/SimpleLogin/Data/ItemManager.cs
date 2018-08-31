@@ -38,7 +38,7 @@ namespace SimpleLogin.Data
             return _IRestService.DeleteTodoItemAsync(item.Identification);
         }
 
-        public Task<MessageResponse> ConvalidateUserAsync(User item, string typeOfRequest)
+        public Task<ApiResponse> ConvalidateUserAsync(User item, string typeOfRequest)
         {
             return  _IRestService.ConvalidateUserAsync(item, typeOfRequest);
         }

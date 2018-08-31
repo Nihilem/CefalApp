@@ -14,6 +14,7 @@ namespace SimpleLogin.Connection
         Task SaveTodoItemAsync(TodoItem item, bool isNewItem);
 
         Task DeleteTodoItemAsync(string id);
-        Task<MessageResponse> ConvalidateUserAsync(User item, string typeOfRequest);
+
+        Task<ApiResponse> ConvalidateUserAsync(User item, string typeOfRequest);
     }
 }

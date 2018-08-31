@@ -129,18 +129,33 @@
                         FontSize="20"
                         TextColor="White"
                   />
+                    <Label 
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       Text="Select Medicine"
+                       HorizontalOptions="Start"
+                       VerticalOptions="CenterAndExpand" />
                     <Picker
                        Grid.Row="4"
-                       Grid.Column="0"
-                       x:Name="picker">
+                       Grid.Column="2"
+                       HorizontalOptions="EndAndExpand"
+                       x:Name="PickerMedicine"
+                       Title="Medicine"
+                       ItemsSource="{Binding Medicine}"
+                       
+                    />
+                    <Label
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        x:Name="displayLabel"
+                        Text="(YOlo)"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand" />
 
-                    </Picker>
                 </Grid>
+               
             </StackLayout>
-            <Label x:Name="displayLabel"
-               Text="(YOlo)"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
